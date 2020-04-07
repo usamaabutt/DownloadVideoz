@@ -15,17 +15,22 @@ import Emailvarification from './src/MantraScreens/authflow/Emailvarification/Em
 import Manue from './src/MantraScreens/mainflow/manuescreen/Manue';
 import Manue1 from './src/MantraScreens/mainflow/manuescreen/manue1';
 import Manuesearch from './src/MantraScreens/mainflow/manuescreen/Manuesearch';
+import SelectedManue from './src/MantraScreens/mainflow/manuescreen/SelectedManue';
+import Cart from './src/MantraScreens/mainflow/manuescreen/Cart';
+import Cart1 from './src/MantraScreens/mainflow/manuescreen/Cart1';
+import Cart2 from './src/MantraScreens/mainflow/manuescreen/Cart2';
+import Payment from './src/MantraScreens/mainflow/manuescreen/Payment';
 
 
 function DetailsScreen({ navigation }) {
   
 }
-
+ 
 class App extends Component {
   render() {
     return (
       <NavigationContainer>
-        <Manuesearch />
+        <Payment/>
       </NavigationContainer>
     );
   }

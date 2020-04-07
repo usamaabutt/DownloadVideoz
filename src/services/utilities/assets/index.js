@@ -34,6 +34,12 @@ export const appImages = {
     add  : require('../../../assets/images/add.png'),
     minus  : require('../../../assets/images/minus.png'),
     heart  : require('../../../assets/images/heart.png'),
+    downarrow  : require('../../../assets/images/down-arrow.png'),
+    whiteline  : require('../../../assets/images/header-line-white.png'),
+    editscreen  : require('../../../assets/images/editScene.png'),
+    cencelbutton  : require('../../../assets/images/greenCloseBtn.png'),
+    purewhiteline  : require('../../../assets/images/pureWhite.png'),
+    fullblackline  : require('../../../assets/images/fullblackline.png'),
 
 
 }

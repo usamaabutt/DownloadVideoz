@@ -19,30 +19,32 @@ class Editprofile extends Component {
     card(items, key) {
         // console.log("card is receiving", key)
         return (
-            <View key={key} style={{ height: height(12), width: width(90), borderWidth: 1, borderColor: 'lightgrey', borderRadius: 5, marginBottom: height(2), justifyContent: 'center', alignSelf: 'center' }}>
-                <View style={{ height: height(3), width: width(50), marginLeft: 36 }}>
-                    <Text style={{ fontSize: 15, color: '#99cc00', fontWeight: 'normal', textAlign: 'left', justifyContent: 'center' }}>{items.name}<Text style={{ fontSize: 15, color: '#99cc00', fontWeight: 'bold', justifyContent: 'center' }}></Text></Text>
-                </View>
-                <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                    <View style={{ height: height(6), width: width(9), alignItems: 'flex-start', justifyContent: 'center' }}>
-                        <Image source={appImages.heart} style={{ height: height(5), width: width(6), alignSelf: 'center', resizeMode: 'contain' }} />
+            <View style={{ marginBottom: height(1), }}>
+                <View key={key} style={{ height: height(10), width: width(90), borderWidth: 1, borderColor: 'lightgrey', borderRadius: 5, justifyContent: 'center', alignSelf: 'center' }}>
+                    <View style={{ height: height(3), width: width(50), marginLeft: 36 }}>
+                        <Text style={{ fontSize: 15, color: '#99cc00', fontWeight: 'normal', textAlign: 'left', justifyContent: 'center' }}>{items.name}<Text style={{ fontSize: 15, color: '#99cc00', fontWeight: 'bold', justifyContent: 'center' }}></Text></Text>
                     </View>
-                    <View style={{ height: height(6), width: width(45), justifyContent: 'center' }}>
-                        <Text style={{ fontSize: 17, color: 'black', fontWeight: 'normal', textAlign: 'left' }}>TOMATENSUPPE </Text>
-                        <Text style={{ fontSize: 15, color: '#99cc00', fontWeight: 'normal', textAlign: 'left' }}>Indische Tomatensuppe</Text>
-                    </View>
-                    <View style={{ height: height(5), width: width(15), alignItems: 'flex-start', justifyContent: 'center' }}>
-                        <Text style={{ fontSize: 20, color: 'black', fontWeight: 'bold', textAlign: 'center' }}>{items.number}</Text>
-                    </View>
-                    <View style={{ height: height(4), width: width(25), flexDirection: 'row' }}>
-                        <View style={{ height: height(4), width: width(8), justifyContent: 'center' }}>
-                            <Image source={appImages.minus} style={{ height: height(5), width: width(7), resizeMode: 'contain', alignSelf: 'center' }} />
+                    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                        <View style={{ height: height(6), width: width(9), alignItems: 'flex-start', justifyContent: 'center' }}>
+                            <Image source={appImages.heart} style={{ height: height(5), width: width(6), alignSelf: 'center', resizeMode: 'contain' }} />
                         </View>
-                        <View style={{ height: height(4), width: width(4), justifyContent: 'center' }}>
-                            <Text style={{ fontSize: 18, color: 'black', fontWeight: 'normal', textAlign: 'center' }}>0</Text>
+                        <View style={{ height: height(6), width: width(45), justifyContent: 'center' }}>
+                            <Text style={{ fontSize: 17, color: 'black', fontWeight: 'normal', textAlign: 'left' }}>TOMATENSUPPE </Text>
+                            <Text style={{ fontSize: 15, color: '#99cc00', fontWeight: 'normal', textAlign: 'left' }}>Indische Tomatensuppe</Text>
                         </View>
-                        <View style={{ height: height(4), width: width(8), justifyContent: 'center' }}>
-                            <Image source={appImages.add} style={{ height: height(5), width: width(7), resizeMode: 'contain', alignSelf: 'center' }} />
+                        <View style={{ height: height(5), width: width(15), alignItems: 'flex-start', justifyContent: 'center' }}>
+                            <Text style={{ fontSize: 20, color: 'black', fontWeight: 'bold', textAlign: 'center' }}>{items.number}</Text>
+                        </View>
+                        <View style={{ height: height(4), width: width(25), flexDirection: 'row' }}>
+                            <TouchableOpacity style={{ height: height(4), width: width(8), justifyContent: 'center' }}>
+                                <Image source={appImages.minus} style={{ height: height(5), width: width(7), resizeMode: 'contain', alignSelf: 'center' }} />
+                            </TouchableOpacity>
+                            <View style={{ height: height(4), width: width(4), justifyContent: 'center' }}>
+                                <Text style={{ fontSize: 18, color: 'black', fontWeight: 'normal', textAlign: 'center' }}>0</Text>
+                            </View>
+                            <TouchableOpacity style={{ height: height(4), width: width(8), justifyContent: 'center' }}>
+                                <Image source={appImages.add} style={{ height: height(5), width: width(7), resizeMode: 'contain', alignSelf: 'center' }} />
+                            </TouchableOpacity>
                         </View>
                     </View>
                 </View>
@@ -60,9 +62,9 @@ class Editprofile extends Component {
                             platform='android'
                             value={this.state.search}
                             onChangeText={(value) => {
-                                this.setState({ 
+                                this.setState({
                                     search: value
-                                },()=>{
+                                }, () => {
                                     console.log('reder func setState===:', this.state.search);
                                 })
                             }}
@@ -71,13 +73,17 @@ class Editprofile extends Component {
                             keyboardType='default'
                         />
                     </View>
+                    <View style={{height:height(3), width:width(40), justifyContent:'center', alignContent:'center', marginTop:20}}>
+                        <Text style={{fontSize:15, textAlign:'center', color:'grey'}}>Suggestions</Text>
+                    </View>
                     <ScrollView>
-                        <View style={{width: width(90), borderColor: 'lightgrey', borderRadius: 5, marginTop: 30, marginBottom: height(2),justifyContent: 'center', alignSelf: 'center' }}>
+                        <View style={{ width: width(90), borderColor: 'lightgrey', borderRadius: 5, marginTop: 20, marginBottom: height(2), justifyContent: 'center', alignSelf: 'center' }}>
                             {
                                 this.state.arr.map((items, key) => {
                                     return (this.card(items, key))
                                 })
                             }
+
                         </View>
                     </ScrollView>
                 </View>
